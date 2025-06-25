@@ -12,6 +12,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const { token } = useAuth();
 
@@ -56,13 +57,23 @@ export default function LoginPage() {
           />
           <input
             name="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             value={form.password}
             onChange={handleChange}
             required
             className="w-full px-4 py-2 border rounded"
           />
+          <div className="flex items-center mb-2">
+            <input
+              id="show-password"
+              type="checkbox"
+              checked={showPassword}
+              onChange={() => setShowPassword((v) => !v)}
+              className="mr-2"
+            />
+            <label htmlFor="show-password" className="text-sm text-gray-600 dark:text-gray-300">Show Password</label>
+          </div>
           <button
             type="submit"
             disabled={loading}
