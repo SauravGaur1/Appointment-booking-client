@@ -36,6 +36,11 @@ export default function DashboardPage() {
               My Bookings
             </button>
           </Link>
+          <Link href="/pages/my-bookings">
+            <button className="px-6 py-3 bg-green-600 text-white rounded font-semibold hover:bg-green-700 w-full">
+              Bookings Made By Me
+            </button>
+          </Link>
         </div>
       </div>
     </main>

@@ -110,7 +110,16 @@ export default function PublicProfilePage() {
             ) : (
               <ul className="space-y-2">
                 {slots.map(slot => (
-                  <li key={slot._id} className="flex items-center justify-between bg-blue-50 dark:bg-blue-900 rounded px-4 py-2">
+                  <li
+                    key={slot._id}
+                    className={`flex items-center justify-between bg-blue-50 dark:bg-blue-900 rounded px-4 py-2 cursor-pointer ${token && slot.status === "available" ? "hover:ring-2 ring-blue-400" : ""
+                      }`}
+                    onClick={() => {
+                      if (token && slot.status === "available") {
+                        setBooking({ slotId: slot._id });
+                      }
+                    }}
+                  >
                     <span>
                       {new Date(slot.startTime).toLocaleString()} - {new Date(slot.endTime).toLocaleTimeString()}{" "}
                       <span className="ml-2 text-xs px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-700">
@@ -125,6 +134,7 @@ export default function PublicProfilePage() {
                         checked={booking.slotId === slot._id}
                         onChange={() => setBooking({ slotId: slot._id })}
                         className="ml-2"
+                        onClick={e => e.stopPropagation()} // Prevents double event
                       />
                     )}
                   </li>
