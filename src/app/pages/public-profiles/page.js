@@ -28,9 +28,10 @@ export default function PublicProfilesPage() {
   return (
     <main className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-50 to-white dark:from-neutral-900 dark:to-neutral-950 py-10">
       <div className="w-full max-w-2xl mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <Link href="/" className="text-blue-700 hover:underline font-semibold">
+        {!token && <Link href="/" className="text-blue-700 hover:underline font-semibold">
           &larr; Home
         </Link>
+        }
         <div className="flex gap-4">
           {token && (
             <>
@@ -81,7 +82,7 @@ export default function PublicProfilesPage() {
                   className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
                   disabled={navigating}
                 >
-                  View Profile
+                  Book Appointment
                 </button>
               </div>
               {profile.bio && (

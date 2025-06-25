@@ -63,7 +63,7 @@ const MyBookingsPage = () => {
                     <span className="font-medium">Date:</span> {dayjs(booking.slotId?.date).format("DD MMM YYYY")}
                   </div>
                   <div>
-                    <span className="font-medium">Time:</span> {booking.slotId?.startTime} - {booking.slotId?.endTime}
+                    <span className="font-medium">Time:</span> {booking.slotId?.startTime ? new Date(booking.slotId?.startTime).toLocaleString() : "--"} - {booking.slotId?.endTime ? new Date(booking.slotId?.endTime).toLocaleTimeString() : "--"}
                   </div>
                 </div>
                 <div className="mt-4 md:mt-0 text-sm text-gray-400">

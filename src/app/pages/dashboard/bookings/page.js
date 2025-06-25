@@ -58,7 +58,7 @@ export default function MyBookingsPage() {
                   </div>
                   <div>
                     <span className="font-semibold">Slot:</span>{" "}
-                    {new Date(booking.slotId?.startTime).toLocaleString()} - {new Date(booking.slotId?.endTime).toLocaleTimeString()}
+                    {booking.slotId?.startTime ? new Date(booking.slotId?.startTime).toLocaleString() : "--"} - {booking.slotId?.endTime ? new Date(booking.slotId?.endTime).toLocaleTimeString() : "--"}
                   </div>
                 </div>
                 <div className="mt-2 sm:mt-0">

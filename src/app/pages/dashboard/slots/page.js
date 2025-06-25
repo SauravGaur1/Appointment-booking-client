@@ -125,7 +125,7 @@ export default function MySlotsPage() {
                 className="flex items-center justify-between bg-blue-50 dark:bg-blue-900 rounded px-4 py-2"
               >
                 <span>
-                  {new Date(slot.startTime).toLocaleString()} - {new Date(slot.endTime).toLocaleTimeString()}
+                  {slot.startTime ? new Date(slot.startTime).toLocaleString() : "--"} - {slot.endTime ? new Date(slot.endTime).toLocaleTimeString() : "--"}
                 </span>
                 <button
                   onClick={() => handleDelete(slot._id)}

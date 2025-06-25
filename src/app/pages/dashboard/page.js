@@ -28,17 +28,17 @@ export default function DashboardPage() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Link href="/pages/dashboard/slots">
             <button className="px-6 py-3 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 w-full">
-              My Slots
+              Slots Manager
             </button>
           </Link>
           <Link href="/pages/dashboard/bookings">
             <button className="px-6 py-3 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 w-full">
-              My Bookings
+              My Appointments
             </button>
           </Link>
           <Link href="/pages/my-bookings">
             <button className="px-6 py-3 bg-green-600 text-white rounded font-semibold hover:bg-green-700 w-full">
-              Bookings Made By Me
+              Appointments Made By Me
             </button>
           </Link>
         </div>
