@@ -27,7 +27,7 @@ export default function PublicProfilesPage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-50 to-white dark:from-neutral-900 dark:to-neutral-950 py-10">
-      <div className="w-full max-w-2xl mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="w-full max-w-2xl mb-6 flex flex-col sm:flex-row items-center gap-4 justify-end">
         {!token && <Link href="/" className="text-blue-700 hover:underline font-semibold">
           &larr; Home
         </Link>
