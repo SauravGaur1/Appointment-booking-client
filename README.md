@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Appointment Booking Frontend
+
+Live Demo: [https://appointment-booking-client-beryl.vercel.app/](https://appointment-booking-client-beryl.vercel.app/)
+
+A modern, scalable appointment booking frontend built with Next.js, React, and Tailwind CSS. This app provides a seamless user experience for professionals and clients to manage, browse, and book appointment slots. It communicates with a Node.js/Express/MongoDB backend via REST APIs.
+
+## Features
+
+- **Authentication**: Register and login with protected routes.
+- **Public Profiles**: Browse professionals and view their available slots.
+- **Slot Management**: Professionals can create, view, and manage their slots (no overlapping slots allowed).
+- **Booking**: Clients can book available slots; bookings update in real time.
+- **My Bookings**: Users can view all bookings they have made, grouped by professional and slot details.
+- **Dashboard**: Central hub for navigation, slot management, and bookings.
+- **Profile Management**: Update your profile information.
+- **Consistent UI**: Beautiful, responsive design with light/dark mode.
+- **Show/Hide Password**: Toggle password visibility on login and register forms.
+- **Error Handling**: User-friendly error messages and loading spinners.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [React Context API]
+- [react-hook-form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [dayjs](https://day.js.org/)
+- [react-hot-toast](https://react-hot-toast.com/)
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   cd appointment-booking/client
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. **Configure environment variables:**
+   - Create a `.env.local` file if needed for API URLs, etc.
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+5. **Open in browser:**
+   Visit [http://localhost:3000](http://localhost:3000)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Folder Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `src/app/pages/` — All main pages (register, login, dashboard, profile, public profiles, bookings, etc.)
+- `src/components/` — Reusable UI components (Card, Button, Spinner, PageTitle, etc.)
+- `src/context/` — Auth context and provider
+- `src/lib/axios.js` — Axios instance with token interceptor
+- `public/` — Static assets
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Auth:** `/auth/register`, `/auth/login`
+- **Slots:** `/slots`, `/slots/:userId`
+- **Bookings:** `/bookings`, `/my-bookings`
+- **Profile:** `/profile`
 
-## Learn More
+> **Note:** This frontend expects a compatible backend API. See backend documentation for details.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This app is ready to deploy on [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+MIT
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️ by Saurav Gaur.
